@@ -69,9 +69,12 @@ class BulkSmsAPIController extends AppBaseController
         $path = $request->image_name->storeAs($filePath, $strFileName);
         Storage::url($path);
         $input['image_path'] = 'storage/bulk/' . $strFileName;
-        $input['users'] = $request->users;
+        // $input['users'] = $request->users;
         $input['host'] = request()->getHttpHost();
         $input['path'] = public_path() . '/' . $input['image_path'];
+
+        // $bulkSms = BulkSms::create($input);
+        $bulkSms = $this->bulkSmsRepository->create($input);
 
         foreach ($input['users'] as $key => $value) {
             $data = array('name' => $input['message']);
@@ -84,7 +87,6 @@ class BulkSmsAPIController extends AppBaseController
             });
         }
 
-        $bulkSms = BulkSms::create($input);
 
         return $this->sendResponse($bulkSms->toArray(), 'Bulk Sms saved successfully');
     }

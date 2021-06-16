@@ -62,13 +62,13 @@ class BulkSms extends Model
 
     ];
 
-    public function getUsersAttribute()
-    {
-        return json_decode($this->attributes['users']);
-    }
-    public function setUsersAttribute(array $val)
-    {
-        $this->attributes['users'] = json_encode([]);
+    // public function getUsersAttribute()
+    // {
+    //     return json_decode($this->attributes['users']);
+    // }
+    // public function setUsersAttribute(array $val)
+    // {
+    //     $this->attributes['users'] = json_encode([]);
 
-    }
+    // }
 }

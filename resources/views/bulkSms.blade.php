@@ -76,7 +76,7 @@
                     $('.select-users option').attr('selected', 'selected');
                } else if (selectedScreen === 'one') {
                     $('.select-users option').prop("selected", false);
-                    $('.select-users option').first().prop('selected', true);
+                    $('.select-users option').prop('selected', true);
                }
                console.log($('.select-users option'));
           });
@@ -85,11 +85,11 @@
 
                let selectedOption = $(this).val();
                if (selectedScreen === 'one') {
-                    $('.select-users option').prop("selected", false);
+                    // $('.select-users option').prop("selected", false);
                     console.log(selectedOption);
-                    $(this).find(`option[value="${selectedOption[0]}"]`).prop("selected", true);
+                    $(this).find(`option[value="${selectedOption}"]`).prop("selected", true);
                }
-               //    console.log($('.select-users option'));
+               console.log($('.select-users option'));
           });
 
           $(".form").on('submit', function(e) {
