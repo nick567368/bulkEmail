@@ -5,3 +5,5 @@ Step4 : setup database
 Step5 :setup Email createdentials
 After that run php artisan serve command 
 go to these page http://127.0.0.1:8000/bulk_sms
+
+#added new contribution
